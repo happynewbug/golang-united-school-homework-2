@@ -13,24 +13,24 @@ import "math"
 func CalcSquare(sideLen float64, sidesNum int8) float64 {
 	switch sidesNum {
 	case 0:
-		return SidesCircle(sideLen, sidesNum)
+		return SidesCircle(sideLen)
 	case 3:
-		return SidesTriangle(sideLen, sidesNum)
+		return SidesTriangle(sideLen)
 	case 4:
-		return SidesSquare(sideLen, sidesNum)
+		return SidesSquare(sideLen)
 	}
 
 	return 0
 }
 
-func SidesSquare(sideLen float64, sidesNum int8) float64 {
+func SidesSquare(sideLen float64) float64 {
 	return math.Pow(sideLen, 2)
 }
 
-func SidesTriangle(sideLen float64, sidesNum int8) float64 {
+func SidesTriangle(sideLen float64) float64 {
 	return math.Pow(sideLen, 2) / 2
 }
 
-func SidesCircle(sideLen float64, sidesNum int8) float64 {
+func SidesCircle(sideLen float64) float64 {
 	return 2 * math.Pi * math.Pow(sideLen, 2)
 }
