@@ -10,11 +10,7 @@ import "math"
 // CalcSquare(10.0, SidesSquare)
 // CalcSquare(10.0, SidesCircle)
 
-func CalcSquare(sideLen float64, funcName func(sideLen float64) float64) float64 {
-	if sideLen == 0 {
-		return 0
-	}
-
+func CalcSquare(sideLen float64, funcName func(len float64) float64) float64 {
 	return funcName(sideLen)
 }
 
@@ -27,5 +23,5 @@ func SidesTriangle(sideLen float64) float64 {
 }
 
 func SidesCircle(sideLen float64) float64 {
-	return 2 * math.Pi * math.Pow(sideLen, 2)
+	return math.Pi * (sideLen * sideLen)
 }
