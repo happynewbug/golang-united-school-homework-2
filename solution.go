@@ -19,7 +19,7 @@ func SidesSquare(sideLen float64) float64 {
 }
 
 func SidesTriangle(sideLen float64) float64 {
-	return sideLen * sideLen / 2
+	return math.Pow(sideLen, 2) * math.Sqrt(3) / 4
 }
 
 func SidesCircle(sideLen float64) float64 {
