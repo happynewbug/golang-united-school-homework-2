@@ -10,17 +10,12 @@ import "math"
 // CalcSquare(10.0, SidesSquare)
 // CalcSquare(10.0, SidesCircle)
 
-func CalcSquare(sideLen float64, sidesNum int8) float64 {
-	switch sidesNum {
-	case 0:
-		return SidesCircle(sideLen)
-	case 3:
-		return SidesTriangle(sideLen)
-	case 4:
-		return SidesSquare(sideLen)
+func CalcSquare(sideLen float64, funcName func(sideLen float64) float64) float64 {
+	if sideLen == 0 {
+		return 0
 	}
 
-	return 0
+	return funcName(sideLen)
 }
 
 func SidesSquare(sideLen float64) float64 {
