@@ -19,11 +19,11 @@ func CalcSquare(sideLen float64, funcName func(sideLen float64) float64) float64
 }
 
 func SidesSquare(sideLen float64) float64 {
-	return math.Pow(sideLen, 2)
+	return sideLen * sideLen
 }
 
 func SidesTriangle(sideLen float64) float64 {
-	return math.Pow(sideLen, 2) / 2
+	return sideLen * sideLen / 2
 }
 
 func SidesCircle(sideLen float64) float64 {

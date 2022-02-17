@@ -12,7 +12,7 @@ type param struct {
 }
 
 func TestCalcSquare(t *testing.T) {
-	_ = [6]param{
+	_ = [4]param{
 		{5, 0, 50 * math.Pi},
 		{6, 3, 18},
 		{7, 4, 49},
