@@ -7,21 +7,21 @@ import (
 
 func TestSidesSquare(t *testing.T) {
 	var expects float64 = 100
-	actual := SidesSquare(10.0)
+	actual := CalcSquare(10.0, SidesSquare)
 
 	diff(t, expects, actual)
 }
 
 func TestSidesTriangle(t *testing.T) {
 	expects := 43.3
-	actual := SidesTriangle(10.0)
+	actual := CalcSquare(10.0, SidesTriangle)
 
 	diff(t, expects, actual)
 }
 
 func TestSidesCircle(t *testing.T) {
 	var expects = math.Pi * 100
-	actual := SidesCircle(10.0)
+	actual := CalcSquare(10.0, SidesCircle)
 
 	diff(t, expects, actual)
 }

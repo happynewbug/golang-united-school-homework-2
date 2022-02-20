@@ -10,18 +10,21 @@ import "math"
 // CalcSquare(10.0, SidesSquare)
 // CalcSquare(10.0, SidesCircle)
 
-func CalcSquare(sideLen float64, funcName func(len float64) float64) float64 {
-	return funcName(sideLen)
-}
+type custom int
 
-func SidesSquare(sideLen float64) float64 {
-	return sideLen * sideLen
-}
+const SidesTriangle custom = 3
+const SidesSquare custom = 4
+const SidesCircle custom = 0
 
-func SidesTriangle(sideLen float64) float64 {
-	return math.Pow(sideLen, 2) * math.Sqrt(3) / 4
-}
+func CalcSquare(sideLen float64, sidesNum custom) float64 {
+	switch sidesNum {
+	case 3:
+		return math.Pow(sideLen, 2) * math.Sqrt(3) / 4
+	case 4:
+		return sideLen * sideLen
+	case 0:
+		return math.Pi * (sideLen * sideLen)
+	}
 
-func SidesCircle(sideLen float64) float64 {
-	return math.Pi * (sideLen * sideLen)
+	return 0
 }
