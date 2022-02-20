@@ -18,11 +18,11 @@ const SidesCircle custom = 0
 
 func CalcSquare(sideLen float64, sidesNum custom) float64 {
 	switch sidesNum {
-	case 3:
+	case SidesTriangle:
 		return math.Pow(sideLen, 2) * math.Sqrt(3) / 4
-	case 4:
+	case SidesSquare:
 		return sideLen * sideLen
-	case 0:
+	case SidesCircle:
 		return math.Pi * (sideLen * sideLen)
 	}
 
